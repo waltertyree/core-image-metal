@@ -13,6 +13,10 @@
 		D466A31926BC821800354EF4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D466A31726BC821800354EF4 /* Main.storyboard */; };
 		D466A31B26BC821A00354EF4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D466A31A26BC821A00354EF4 /* Assets.xcassets */; };
 		D466A31E26BC821A00354EF4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D466A31C26BC821A00354EF4 /* LaunchScreen.storyboard */; };
+		D466A32826BC85E200354EF4 /* ColorFilters.metal in Sources */ = {isa = PBXBuildFile; fileRef = D466A32726BC85E200354EF4 /* ColorFilters.metal */; };
+		D466A32A26BC8DDC00354EF4 /* dog_portrait.HEIC in Resources */ = {isa = PBXBuildFile; fileRef = D466A32926BC8BFB00354EF4 /* dog_portrait.HEIC */; };
+		D466A32C26BC914900354EF4 /* GrayscaleFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D466A32B26BC914900354EF4 /* GrayscaleFilter.swift */; };
+		D466A32E26BC968400354EF4 /* dog_large.HEIC in Resources */ = {isa = PBXBuildFile; fileRef = D466A32D26BC968400354EF4 /* dog_large.HEIC */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,10 @@
 		D466A31A26BC821A00354EF4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D466A31D26BC821A00354EF4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D466A31F26BC821A00354EF4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D466A32726BC85E200354EF4 /* ColorFilters.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = ColorFilters.metal; sourceTree = "<group>"; };
+		D466A32926BC8BFB00354EF4 /* dog_portrait.HEIC */ = {isa = PBXFileReference; lastKnownFileType = file; path = dog_portrait.HEIC; sourceTree = "<group>"; };
+		D466A32B26BC914900354EF4 /* GrayscaleFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrayscaleFilter.swift; sourceTree = "<group>"; };
+		D466A32D26BC968400354EF4 /* dog_large.HEIC */ = {isa = PBXFileReference; lastKnownFileType = file; path = dog_large.HEIC; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +64,8 @@
 		D466A31026BC821800354EF4 /* filter-harness */ = {
 			isa = PBXGroup;
 			children = (
+				D466A32D26BC968400354EF4 /* dog_large.HEIC */,
+				D466A32926BC8BFB00354EF4 /* dog_portrait.HEIC */,
 				D466A31126BC821800354EF4 /* AppDelegate.swift */,
 				D466A31326BC821800354EF4 /* SceneDelegate.swift */,
 				D466A31526BC821800354EF4 /* ViewController.swift */,
@@ -63,6 +73,8 @@
 				D466A31A26BC821A00354EF4 /* Assets.xcassets */,
 				D466A31C26BC821A00354EF4 /* LaunchScreen.storyboard */,
 				D466A31F26BC821A00354EF4 /* Info.plist */,
+				D466A32726BC85E200354EF4 /* ColorFilters.metal */,
+				D466A32B26BC914900354EF4 /* GrayscaleFilter.swift */,
 			);
 			path = "filter-harness";
 			sourceTree = "<group>";
@@ -125,7 +137,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				D466A31E26BC821A00354EF4 /* LaunchScreen.storyboard in Resources */,
+				D466A32E26BC968400354EF4 /* dog_large.HEIC in Resources */,
 				D466A31B26BC821A00354EF4 /* Assets.xcassets in Resources */,
+				D466A32A26BC8DDC00354EF4 /* dog_portrait.HEIC in Resources */,
 				D466A31926BC821800354EF4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -140,6 +154,8 @@
 				D466A31626BC821800354EF4 /* ViewController.swift in Sources */,
 				D466A31226BC821800354EF4 /* AppDelegate.swift in Sources */,
 				D466A31426BC821800354EF4 /* SceneDelegate.swift in Sources */,
+				D466A32C26BC914900354EF4 /* GrayscaleFilter.swift in Sources */,
+				D466A32826BC85E200354EF4 /* ColorFilters.metal in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -217,6 +233,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_COMPILER_FLAGS = "-fcikernel";
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -272,6 +289,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_COMPILER_FLAGS = "-fcikernel";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -293,6 +311,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MTLLINKER_FLAGS = "-fcikernel";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.tyreeapps.filter-harness";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -312,6 +331,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MTLLINKER_FLAGS = "-fcikernel";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.tyreeapps.filter-harness";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
