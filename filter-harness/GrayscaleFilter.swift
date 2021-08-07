@@ -15,22 +15,25 @@ class GrayscaleFilter: CIFilter {
       fatalError("Unable to load metallib")
     }
     
-    guard let kernel = try? CIColorKernel(functionName: "grayscaleFilterKernel", fromMetalLibraryData: data) else {
-      fatalError("Unable to create the CIColorKernel for grayscaleFilterKernel")
+    guard let kernel = try? CIKernel(functionName: "grayscaleFilterKernel", fromMetalLibraryData: data) else {
+      fatalError("Unable to create the CIKernel for grayscaleFilterKernel")
     }
     
     return kernel
   }()
   
   var inputImage: CIImage?
-  var monoColor: CIVector = CIVector(x: 0.22, y: 0.93, z: 0.17, w: 1.0)
+  var monoColor: CIColor?
+
+
   
   override var outputImage: CIImage? {
     guard let inputImage = inputImage else { return .none }
-    
+    guard let monoColor = monoColor else { return .none}
+    let inputColor: CIVector = CIVector(x: monoColor.red, y: monoColor.green, z: monoColor.blue, w: monoColor.alpha)
     return kernel.apply(extent: inputImage.extent,
                         roiCallback: { (index, rect) -> CGRect in
                           return rect
-                        }, arguments: [inputImage, monoColor])
+                        }, arguments: [inputImage, inputColor])
   }
 }

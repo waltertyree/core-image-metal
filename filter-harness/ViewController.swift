@@ -29,23 +29,30 @@ class ViewController: UIViewController {
 
   }
 
+  fileprivate func distort(center: CIVector) {
+    let filter = HoleDistortionFilter()
+    filter.inputImage = image
+    filter.center = center
+    let filteredImage = filter.outputImage?.cropped(to: image?.extent ?? CGRect(origin: CGPoint(x: 100,y: 100), size: CGSize(width: 100, height: 100)))
+    displayView.image = UIImage(ciImage: (filteredImage) ?? CIImage())
+  }
+
   @IBAction func sliderChanged(_ sender: UISlider) {
     if sender.value == 1.0 {
       displayView.image = UIImage.init(ciImage: image ?? CIImage())
       return
     }
 
-    var uiColorFromSlider = UIColor(hue: CGFloat(sender.value), saturation: 1.0, brightness: 1.0, alpha: 1.0)
-    if sender.value == 0.0 {
-      uiColorFromSlider = UIColor.white
-    }
-    let colorFromSlider = CIColor(color: uiColorFromSlider)
-    let filter = GrayscaleFilter()
-    filter.inputImage = image
-    filter.monoColor = colorFromSlider
+    distort(center: CIVector(x: CGFloat(sender.value), y: CGFloat(sender.value)))
 
-    displayView.image = UIImage(ciImage: (filter.outputImage ?? image) ?? CIImage())
+  }
+  @IBAction func touchDragged(_ sender: UIPanGestureRecognizer) {
+    let touch = sender.location(in: sender.view)
 
+    let x = touch.x  / sender.view!.bounds.width
+    let y = touch.y / sender.view!.bounds.height
+    print("touch is at \(x), \(y)")
+    distort(center: CIVector(x: CGFloat(x), y: CGFloat(y)))
   }
 }
 

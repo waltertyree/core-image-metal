@@ -16,45 +16,43 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8go-0N-2ZW">
-                                <rect key="frame" x="8" y="44" width="398" height="739"/>
+                            <imageView clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8go-0N-2ZW">
+                                <rect key="frame" x="8" y="44" width="398" height="724"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="U74-LT-NYs" appends="YES" id="7js-sj-e5Q"/>
+                                </connections>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="63" translatesAutoresizingMaskIntoConstraints="NO" id="xqL-iN-t4s">
-                                <rect key="frame" x="16" y="807" width="382" height="31"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Apply Filter" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hEw-gN-ML3">
-                                        <rect key="frame" x="0.0" y="0.0" width="270" height="31"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="HjO-hd-kn1">
-                                        <rect key="frame" x="333" y="0.0" width="51" height="31"/>
-                                        <connections>
-                                            <action selector="switchToggled:" destination="BYZ-38-t0r" eventType="valueChanged" id="9Oh-iG-z73"/>
-                                        </connections>
-                                    </switch>
-                                </subviews>
-                            </stackView>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="HZl-Sm-NDc">
+                                <rect key="frame" x="30" y="800" width="354" height="31"/>
+                                <connections>
+                                    <action selector="sliderChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="zuQ-7f-qMI"/>
+                                </connections>
+                            </slider>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="HZl-Sm-NDc" secondAttribute="trailing" constant="32" id="Bm1-uF-uM5"/>
+                            <constraint firstItem="HZl-Sm-NDc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="IQJ-T4-XUj"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="8go-0N-2ZW" secondAttribute="trailing" constant="8" id="WT0-je-2uo"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="HZl-Sm-NDc" secondAttribute="bottom" constant="32" id="Xhq-ga-jdl"/>
                             <constraint firstItem="8go-0N-2ZW" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="YVf-aj-Res"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="xqL-iN-t4s" secondAttribute="trailing" constant="16" id="Yfm-dw-RN0"/>
+                            <constraint firstItem="HZl-Sm-NDc" firstAttribute="top" secondItem="8go-0N-2ZW" secondAttribute="bottom" constant="32" id="ap2-0v-1sg"/>
                             <constraint firstItem="8go-0N-2ZW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="iOu-IU-bJj"/>
-                            <constraint firstItem="xqL-iN-t4s" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="my0-cV-DH3"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="xqL-iN-t4s" secondAttribute="bottom" constant="24" id="pWg-Nq-0aP"/>
-                            <constraint firstItem="xqL-iN-t4s" firstAttribute="top" secondItem="8go-0N-2ZW" secondAttribute="bottom" constant="24" id="voF-Lr-S0Y"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="displayView" destination="8go-0N-2ZW" id="9zS-vS-sbl"/>
-                        <outlet property="filterToggle" destination="HjO-hd-kn1" id="7r2-Mu-AuA"/>
+                        <outlet property="filterSlider" destination="HZl-Sm-NDc" id="EMG-9V-cjx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="U74-LT-NYs">
+                    <connections>
+                        <action selector="touchDragged:" destination="BYZ-38-t0r" id="z16-1J-FYU"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="79.710144927536234" y="88.392857142857139"/>
         </scene>

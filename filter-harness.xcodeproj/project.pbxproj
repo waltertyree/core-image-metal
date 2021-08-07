@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D40B36D826BE0FB90032A579 /* HoleDistortionFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40B36D726BE0FB90032A579 /* HoleDistortionFilter.swift */; };
 		D466A31226BC821800354EF4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D466A31126BC821800354EF4 /* AppDelegate.swift */; };
 		D466A31426BC821800354EF4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D466A31326BC821800354EF4 /* SceneDelegate.swift */; };
 		D466A31626BC821800354EF4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D466A31526BC821800354EF4 /* ViewController.swift */; };
@@ -16,10 +17,10 @@
 		D466A32826BC85E200354EF4 /* ColorFilters.metal in Sources */ = {isa = PBXBuildFile; fileRef = D466A32726BC85E200354EF4 /* ColorFilters.metal */; };
 		D466A32A26BC8DDC00354EF4 /* dog_portrait.HEIC in Resources */ = {isa = PBXBuildFile; fileRef = D466A32926BC8BFB00354EF4 /* dog_portrait.HEIC */; };
 		D466A32C26BC914900354EF4 /* GrayscaleFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D466A32B26BC914900354EF4 /* GrayscaleFilter.swift */; };
-		D466A32E26BC968400354EF4 /* dog_large.HEIC in Resources */ = {isa = PBXBuildFile; fileRef = D466A32D26BC968400354EF4 /* dog_large.HEIC */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D40B36D726BE0FB90032A579 /* HoleDistortionFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoleDistortionFilter.swift; sourceTree = "<group>"; };
 		D466A30E26BC821800354EF4 /* filter-harness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "filter-harness.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D466A31126BC821800354EF4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D466A31326BC821800354EF4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -31,7 +32,6 @@
 		D466A32726BC85E200354EF4 /* ColorFilters.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = ColorFilters.metal; sourceTree = "<group>"; };
 		D466A32926BC8BFB00354EF4 /* dog_portrait.HEIC */ = {isa = PBXFileReference; lastKnownFileType = file; path = dog_portrait.HEIC; sourceTree = "<group>"; };
 		D466A32B26BC914900354EF4 /* GrayscaleFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrayscaleFilter.swift; sourceTree = "<group>"; };
-		D466A32D26BC968400354EF4 /* dog_large.HEIC */ = {isa = PBXFileReference; lastKnownFileType = file; path = dog_large.HEIC; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,7 +64,6 @@
 		D466A31026BC821800354EF4 /* filter-harness */ = {
 			isa = PBXGroup;
 			children = (
-				D466A32D26BC968400354EF4 /* dog_large.HEIC */,
 				D466A32926BC8BFB00354EF4 /* dog_portrait.HEIC */,
 				D466A31126BC821800354EF4 /* AppDelegate.swift */,
 				D466A31326BC821800354EF4 /* SceneDelegate.swift */,
@@ -74,6 +73,7 @@
 				D466A31C26BC821A00354EF4 /* LaunchScreen.storyboard */,
 				D466A31F26BC821A00354EF4 /* Info.plist */,
 				D466A32726BC85E200354EF4 /* ColorFilters.metal */,
+				D40B36D726BE0FB90032A579 /* HoleDistortionFilter.swift */,
 				D466A32B26BC914900354EF4 /* GrayscaleFilter.swift */,
 			);
 			path = "filter-harness";
@@ -137,7 +137,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D466A31E26BC821A00354EF4 /* LaunchScreen.storyboard in Resources */,
-				D466A32E26BC968400354EF4 /* dog_large.HEIC in Resources */,
 				D466A31B26BC821A00354EF4 /* Assets.xcassets in Resources */,
 				D466A32A26BC8DDC00354EF4 /* dog_portrait.HEIC in Resources */,
 				D466A31926BC821800354EF4 /* Main.storyboard in Resources */,
@@ -151,6 +150,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D40B36D826BE0FB90032A579 /* HoleDistortionFilter.swift in Sources */,
 				D466A31626BC821800354EF4 /* ViewController.swift in Sources */,
 				D466A31226BC821800354EF4 /* AppDelegate.swift in Sources */,
 				D466A31426BC821800354EF4 /* SceneDelegate.swift in Sources */,
