@@ -11,7 +11,7 @@ import CoreImage
 class ViewController: UIViewController {
 
 
-  @IBOutlet var filterToggle: UISwitch!
+  @IBOutlet var filterSlider: UISlider!
   @IBOutlet var displayView: UIImageView!
 
   var image: CIImage?
@@ -29,16 +29,23 @@ class ViewController: UIViewController {
 
   }
 
-  @IBAction func switchToggled(_ toggle: UISwitch) {
-    if toggle.isOn {
-      //let filter = CIFilter(name: "CIPhotoEffectChrome", parameters: [kCIInputImageKey: image])
-      let filter = GrayscaleFilter()
-      filter.inputImage = image
-      displayView.image = UIImage.init(ciImage: (filter.outputImage ?? image) ?? CIImage())
-    } else {
+  @IBAction func sliderChanged(_ sender: UISlider) {
+    if sender.value == 1.0 {
       displayView.image = UIImage.init(ciImage: image ?? CIImage())
+      return
     }
-  }
 
+    var uiColorFromSlider = UIColor(hue: CGFloat(sender.value), saturation: 1.0, brightness: 1.0, alpha: 1.0)
+    if sender.value == 0.0 {
+      uiColorFromSlider = UIColor.white
+    }
+    let colorFromSlider = CIColor(color: uiColorFromSlider)
+    let filter = GrayscaleFilter()
+    filter.inputImage = image
+    filter.monoColor = colorFromSlider
+
+    displayView.image = UIImage(ciImage: (filter.outputImage ?? image) ?? CIImage())
+
+  }
 }
 
