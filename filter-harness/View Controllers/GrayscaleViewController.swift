@@ -15,15 +15,11 @@ class GrayscaleViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    // Do any additional setup after loading the view.
-
 
     let imageURL = Bundle.main.url(forResource: "dog_portrait", withExtension: "HEIC")!
     image =  CIImage(contentsOf: imageURL, options: [CIImageOption.applyOrientationProperty: true])
 
     loadCleanImage()
-
-
   }
 
   fileprivate func loadCleanImage() {

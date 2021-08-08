@@ -1,7 +1,5 @@
 //
-//  ViewController.swift
-//  filter-harness
-//
+//  DistortionViewController.swift
 //
 
 import UIKit
@@ -35,8 +33,8 @@ class DistortionViewController: UIViewController {
     let filter = HoleDistortionFilter()
     filter.inputImage = image
     filter.center = center
-    let filteredImage = filter.outputImage?.cropped(to: image?.extent ?? CGRect(origin: CGPoint(x: 100,y: 100), size: CGSize(width: 100, height: 100)))
-    displayView.image = UIImage(ciImage: (filteredImage) ?? CIImage())
+
+    displayView.image = UIImage(ciImage: (filter.outputImage) ?? CIImage())
   }
 
   @IBAction func resetTapped(_ sender: Any) {
