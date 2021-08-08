@@ -2,31 +2,33 @@
 //  ViewController.swift
 //  filter-harness
 //
-//  Created by Walter Tyree on 8/5/21.
 //
 
 import UIKit
 import CoreImage
 
-class ViewController: UIViewController {
+class DistortionViewController: UIViewController {
 
-
-  @IBOutlet var filterSlider: UISlider!
+  @IBOutlet var instructionsLabel: UILabel!
   @IBOutlet var displayView: UIImageView!
 
   var image: CIImage?
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    // Do any additional setup after loading the view.
 
 
     let imageURL = Bundle.main.url(forResource: "dog_portrait", withExtension: "HEIC")!
     image =  CIImage(contentsOf: imageURL, options: [CIImageOption.applyOrientationProperty: true])
 
+    loadCleanImage()
+
+  }
+
+  fileprivate func loadCleanImage() {
     guard let image = image else { return }
     displayView.image = UIImage.init(ciImage: image)
-
+    instructionsLabel.isHidden = false
   }
 
   fileprivate func distort(center: CIVector) {
@@ -37,21 +39,18 @@ class ViewController: UIViewController {
     displayView.image = UIImage(ciImage: (filteredImage) ?? CIImage())
   }
 
-  @IBAction func sliderChanged(_ sender: UISlider) {
-    if sender.value == 1.0 {
-      displayView.image = UIImage.init(ciImage: image ?? CIImage())
-      return
-    }
-
-    distort(center: CIVector(x: CGFloat(sender.value), y: CGFloat(sender.value)))
-
+  @IBAction func resetTapped(_ sender: Any) {
+    loadCleanImage()
   }
+
+
   @IBAction func touchDragged(_ sender: UIPanGestureRecognizer) {
+    instructionsLabel.isHidden = true
     let touch = sender.location(in: sender.view)
 
     let x = touch.x  / sender.view!.bounds.width
     let y = touch.y / sender.view!.bounds.height
-    print("touch is at \(x), \(y)")
+
     distort(center: CIVector(x: CGFloat(x), y: CGFloat(y)))
   }
 }

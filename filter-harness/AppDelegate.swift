@@ -2,7 +2,6 @@
 //  AppDelegate.swift
 //  filter-harness
 //
-//  Created by Walter Tyree on 8/5/21.
 //
 
 import UIKit

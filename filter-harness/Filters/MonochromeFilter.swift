@@ -1,5 +1,5 @@
 //
-//  GrayscaleFilter.swift
+//  MonochromeFilter.swift
 //  filter-harness
 //
 //  Created by Walter Tyree on 8/5/21.
@@ -7,7 +7,7 @@
 
 import CoreImage
 
-class GrayscaleFilter: CIFilter {
+class MonochromeFilter: CIFilter {
   private lazy var kernel: CIKernel = {
     guard
       let url = Bundle.main.url(forResource: "default", withExtension: "metallib"),
@@ -15,8 +15,8 @@ class GrayscaleFilter: CIFilter {
       fatalError("Unable to load metallib")
     }
     
-    guard let kernel = try? CIKernel(functionName: "grayscaleFilterKernel", fromMetalLibraryData: data) else {
-      fatalError("Unable to create the CIKernel for grayscaleFilterKernel")
+    guard let kernel = try? CIKernel(functionName: "monochromeFilterKernel", fromMetalLibraryData: data) else {
+      fatalError("Unable to create the CIKernel for monochromeFilterKernel")
     }
     
     return kernel
@@ -25,8 +25,6 @@ class GrayscaleFilter: CIFilter {
   var inputImage: CIImage?
   var monoColor: CIColor?
 
-
-  
   override var outputImage: CIImage? {
     guard let inputImage = inputImage else { return .none }
     guard let monoColor = monoColor else { return .none}

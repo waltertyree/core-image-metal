@@ -8,30 +8,38 @@
 
 /* Begin PBXBuildFile section */
 		D40B36D826BE0FB90032A579 /* HoleDistortionFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40B36D726BE0FB90032A579 /* HoleDistortionFilter.swift */; };
+		D40B36DA26C00E1A0032A579 /* DistortionFilters.metal in Sources */ = {isa = PBXBuildFile; fileRef = D40B36D926C00E1A0032A579 /* DistortionFilters.metal */; };
+		D40B36DC26C039D50032A579 /* GrayscaleFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40B36DB26C039D50032A579 /* GrayscaleFilter.swift */; };
+		D40B36DE26C03E9B0032A579 /* MonochromeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40B36DD26C03E9B0032A579 /* MonochromeViewController.swift */; };
 		D466A31226BC821800354EF4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D466A31126BC821800354EF4 /* AppDelegate.swift */; };
 		D466A31426BC821800354EF4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D466A31326BC821800354EF4 /* SceneDelegate.swift */; };
-		D466A31626BC821800354EF4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D466A31526BC821800354EF4 /* ViewController.swift */; };
+		D466A31626BC821800354EF4 /* DistortionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D466A31526BC821800354EF4 /* DistortionViewController.swift */; };
 		D466A31926BC821800354EF4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D466A31726BC821800354EF4 /* Main.storyboard */; };
 		D466A31B26BC821A00354EF4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D466A31A26BC821A00354EF4 /* Assets.xcassets */; };
 		D466A31E26BC821A00354EF4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D466A31C26BC821A00354EF4 /* LaunchScreen.storyboard */; };
 		D466A32826BC85E200354EF4 /* ColorFilters.metal in Sources */ = {isa = PBXBuildFile; fileRef = D466A32726BC85E200354EF4 /* ColorFilters.metal */; };
 		D466A32A26BC8DDC00354EF4 /* dog_portrait.HEIC in Resources */ = {isa = PBXBuildFile; fileRef = D466A32926BC8BFB00354EF4 /* dog_portrait.HEIC */; };
-		D466A32C26BC914900354EF4 /* GrayscaleFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D466A32B26BC914900354EF4 /* GrayscaleFilter.swift */; };
+		D466A32C26BC914900354EF4 /* MonochromeFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D466A32B26BC914900354EF4 /* MonochromeFilter.swift */; };
+		D4EE669426C04148004D55F3 /* GrayscaleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4EE669326C04148004D55F3 /* GrayscaleViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		D40B36D726BE0FB90032A579 /* HoleDistortionFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoleDistortionFilter.swift; sourceTree = "<group>"; };
+		D40B36D926C00E1A0032A579 /* DistortionFilters.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = DistortionFilters.metal; sourceTree = "<group>"; };
+		D40B36DB26C039D50032A579 /* GrayscaleFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrayscaleFilter.swift; sourceTree = "<group>"; };
+		D40B36DD26C03E9B0032A579 /* MonochromeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonochromeViewController.swift; sourceTree = "<group>"; };
 		D466A30E26BC821800354EF4 /* filter-harness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "filter-harness.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D466A31126BC821800354EF4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D466A31326BC821800354EF4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		D466A31526BC821800354EF4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D466A31526BC821800354EF4 /* DistortionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistortionViewController.swift; sourceTree = "<group>"; };
 		D466A31826BC821800354EF4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D466A31A26BC821A00354EF4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D466A31D26BC821A00354EF4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D466A31F26BC821A00354EF4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D466A32726BC85E200354EF4 /* ColorFilters.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = ColorFilters.metal; sourceTree = "<group>"; };
 		D466A32926BC8BFB00354EF4 /* dog_portrait.HEIC */ = {isa = PBXFileReference; lastKnownFileType = file; path = dog_portrait.HEIC; sourceTree = "<group>"; };
-		D466A32B26BC914900354EF4 /* GrayscaleFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrayscaleFilter.swift; sourceTree = "<group>"; };
+		D466A32B26BC914900354EF4 /* MonochromeFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonochromeFilter.swift; sourceTree = "<group>"; };
+		D4EE669326C04148004D55F3 /* GrayscaleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrayscaleViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,19 +72,39 @@
 		D466A31026BC821800354EF4 /* filter-harness */ = {
 			isa = PBXGroup;
 			children = (
+				D4EE669526C0472C004D55F3 /* Filters */,
+				D4EE669626C04743004D55F3 /* View Controllers */,
 				D466A32926BC8BFB00354EF4 /* dog_portrait.HEIC */,
 				D466A31126BC821800354EF4 /* AppDelegate.swift */,
 				D466A31326BC821800354EF4 /* SceneDelegate.swift */,
-				D466A31526BC821800354EF4 /* ViewController.swift */,
 				D466A31726BC821800354EF4 /* Main.storyboard */,
 				D466A31A26BC821A00354EF4 /* Assets.xcassets */,
 				D466A31C26BC821A00354EF4 /* LaunchScreen.storyboard */,
 				D466A31F26BC821A00354EF4 /* Info.plist */,
-				D466A32726BC85E200354EF4 /* ColorFilters.metal */,
-				D40B36D726BE0FB90032A579 /* HoleDistortionFilter.swift */,
-				D466A32B26BC914900354EF4 /* GrayscaleFilter.swift */,
 			);
 			path = "filter-harness";
+			sourceTree = "<group>";
+		};
+		D4EE669526C0472C004D55F3 /* Filters */ = {
+			isa = PBXGroup;
+			children = (
+				D466A32726BC85E200354EF4 /* ColorFilters.metal */,
+				D40B36D926C00E1A0032A579 /* DistortionFilters.metal */,
+				D40B36D726BE0FB90032A579 /* HoleDistortionFilter.swift */,
+				D466A32B26BC914900354EF4 /* MonochromeFilter.swift */,
+				D40B36DB26C039D50032A579 /* GrayscaleFilter.swift */,
+			);
+			path = Filters;
+			sourceTree = "<group>";
+		};
+		D4EE669626C04743004D55F3 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D466A31526BC821800354EF4 /* DistortionViewController.swift */,
+				D40B36DD26C03E9B0032A579 /* MonochromeViewController.swift */,
+				D4EE669326C04148004D55F3 /* GrayscaleViewController.swift */,
+			);
+			path = "View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -151,11 +179,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				D40B36D826BE0FB90032A579 /* HoleDistortionFilter.swift in Sources */,
-				D466A31626BC821800354EF4 /* ViewController.swift in Sources */,
+				D40B36DC26C039D50032A579 /* GrayscaleFilter.swift in Sources */,
+				D466A31626BC821800354EF4 /* DistortionViewController.swift in Sources */,
 				D466A31226BC821800354EF4 /* AppDelegate.swift in Sources */,
 				D466A31426BC821800354EF4 /* SceneDelegate.swift in Sources */,
-				D466A32C26BC914900354EF4 /* GrayscaleFilter.swift in Sources */,
+				D466A32C26BC914900354EF4 /* MonochromeFilter.swift in Sources */,
 				D466A32826BC85E200354EF4 /* ColorFilters.metal in Sources */,
+				D40B36DE26C03E9B0032A579 /* MonochromeViewController.swift in Sources */,
+				D4EE669426C04148004D55F3 /* GrayscaleViewController.swift in Sources */,
+				D40B36DA26C00E1A0032A579 /* DistortionFilters.metal in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

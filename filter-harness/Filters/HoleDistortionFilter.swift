@@ -25,7 +25,7 @@ class HoleDistortionFilter: CIFilter {
 
   var inputImage: CIImage?
   var center = CIVector(x: 0.5, y: 0.3)
-  var param = CIVector(x: 1/0.18, y: 0.18)
+  var param = CIVector(x: 1/0.08, y: 0.08)
 
 
   override var outputImage: CIImage? {
