@@ -34,7 +34,7 @@ class MonochromeViewController: UIViewController {
 
     let filter = MonochromeFilter()
     filter.inputImage = image
-    filter.monoColor = colorFromSlider
+    filter.inputTintColor = colorFromSlider
 
     displayView.image = UIImage(ciImage: (filter.outputImage ?? image) ?? CIImage())
   }

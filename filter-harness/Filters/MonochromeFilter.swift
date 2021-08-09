@@ -23,12 +23,12 @@ class MonochromeFilter: CIFilter {
   }()
   
   var inputImage: CIImage?
-  var monoColor: CIColor?
+  var inputTintColor: CIColor?
 
   override var outputImage: CIImage? {
     guard let inputImage = inputImage else { return .none }
-    guard let monoColor = monoColor else { return .none}
-    let inputColor: CIVector = CIVector(x: monoColor.red, y: monoColor.green, z: monoColor.blue, w: monoColor.alpha)
+    guard let inputTintColor = inputTintColor else { return .none}
+    let inputColor: CIVector = CIVector(x: inputTintColor.red, y: inputTintColor.green, z: inputTintColor.blue, w: inputTintColor.alpha)
     return kernel.apply(extent: inputImage.extent,
                         roiCallback: { (index, rect) -> CGRect in
                           return rect

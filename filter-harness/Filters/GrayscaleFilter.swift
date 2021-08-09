@@ -10,8 +10,6 @@
 import CoreImage
 
 class GrayscaleFilter: CIFilter {
-  var inputImage: CIImage?
-  var inputParam: Float = 0.0
   static var kernel: CIColorKernel = { () -> CIColorKernel in
     let url = Bundle.main.url(forResource: "default",
                               withExtension: "metallib")!
@@ -19,6 +17,8 @@ class GrayscaleFilter: CIFilter {
     return try! CIColorKernel(functionName: "grayscaleFilterKernel",
                               fromMetalLibraryData: data)
   }()
+
+  var inputImage: CIImage?
 
   override var outputImage: CIImage? {
     guard let inputImage = inputImage else { return .none }

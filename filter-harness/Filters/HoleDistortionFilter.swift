@@ -1,8 +1,5 @@
 //
 //  HoleDistortionFilter.swift
-//  filter-harness
-//
-//  Created by Walter Tyree on 8/6/21.
 //
 
 
@@ -24,8 +21,8 @@ class HoleDistortionFilter: CIFilter {
   }()
 
   var inputImage: CIImage?
-  var center = CIVector(x: 0.5, y: 0.3)
-  var param = CIVector(x: 1/0.08, y: 0.08)
+  var inputCenter = CIVector(x: 0.5, y: 0.3)
+  var inputParameters = CIVector(x: 1/0.08, y: 0.08)
 
 
   override var outputImage: CIImage? {
@@ -33,6 +30,6 @@ class HoleDistortionFilter: CIFilter {
     return kernel.apply(extent: inputImage.extent,
                         roiCallback: { (index, rect) -> CGRect in
                           return rect
-                        }, arguments: [inputImage, center, param])
+                        }, arguments: [inputImage, inputCenter, inputParameters])
   }
 }

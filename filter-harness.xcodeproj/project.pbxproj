@@ -75,6 +75,7 @@
 				D4EE669526C0472C004D55F3 /* Filters */,
 				D4EE669626C04743004D55F3 /* View Controllers */,
 				D466A32926BC8BFB00354EF4 /* dog_portrait.HEIC */,
+				D466A31F26BC821A00354EF4 /* Info.plist */,
 				D4EE669726C07471004D55F3 /* Misc */,
 			);
 			path = "filter-harness";
@@ -110,7 +111,6 @@
 				D466A31726BC821800354EF4 /* Main.storyboard */,
 				D466A31A26BC821A00354EF4 /* Assets.xcassets */,
 				D466A31C26BC821A00354EF4 /* LaunchScreen.storyboard */,
-				D466A31F26BC821A00354EF4 /* Info.plist */,
 			);
 			path = Misc;
 			sourceTree = "<group>";

@@ -32,7 +32,7 @@ class DistortionViewController: UIViewController {
   fileprivate func distort(center: CIVector) {
     let filter = HoleDistortionFilter()
     filter.inputImage = image
-    filter.center = center
+    filter.inputCenter = center
 
     displayView.image = UIImage(ciImage: (filter.outputImage) ?? CIImage())
   }
