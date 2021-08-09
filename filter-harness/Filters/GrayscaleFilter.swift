@@ -1,9 +1,5 @@
 //
 //  GrayscaleFilter.swift
-//  filter-harness
-//
-//  Created by Walter Tyree on 8/8/21.
-//
 //
 
 
@@ -27,4 +23,26 @@ class GrayscaleFilter: CIFilter {
                           return rect
                         }, arguments: [inputImage])
   }
+
+  //These are needed when we want to use our filter with the "stringly typed" api
+
+  override func setValue(_ value: Any?, forKey key: String) {
+          switch key {
+              case "inputImage":
+                inputImage = value as? CIImage
+              default:
+                  break
+          }
+      }
+
+  override var attributes: [String : Any] {
+          return [
+              kCIAttributeFilterDisplayName: "Custom Grayscale Filter",
+
+              "inputImage": [kCIAttributeIdentity: 0,
+                             kCIAttributeClass: "CIImage",
+                             kCIAttributeDisplayName: "Image",
+                             kCIAttributeType: kCIAttributeTypeImage]
+          ]
+      }
 }

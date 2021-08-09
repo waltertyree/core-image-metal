@@ -1,8 +1,6 @@
 //
-//  ColorFilters.metal
-//  filter-harness
+//  DistortionFilters.metal
 //
-//  Created by Walter Tyree on 8/5/21.
 //
 
 #include <metal_stdlib>
@@ -13,6 +11,9 @@ using namespace metal;
 extern "C" {
   namespace coreimage {
     // KERNEL
+    //adapted from https://developer.apple.com/library/archive/documentation/GraphicsImaging/Conceptual/CoreImaging/ci_custom_filters/ci_custom_filters.html#//apple_ref/doc/uid/TP30001185-CH6-SW4
+
+    //this can only create a general filter because of the function signature
     float4 holeDistortionKernel(sampler src, float2 center, float2 params) {
       float2 t1;
       float distance0, distance1;
